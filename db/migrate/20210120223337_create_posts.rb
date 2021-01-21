@@ -4,8 +4,8 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :intro
       t.string :summary
-      t.belongs_to :user
-      t.belongs_to :spread
+      t.belongs_to :user, null: false, foreign_key: true
+      t.belongs_to :spread, null: false, foreign_key: true
     end
   end
 end
