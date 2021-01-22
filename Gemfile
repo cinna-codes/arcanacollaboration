@@ -24,6 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 # allow user authentication through other websites
 gem 'omniauth'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'dotenv-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
