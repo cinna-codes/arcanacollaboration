@@ -6,5 +6,6 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
 
     has_many :readings
+    has_many :spreads, through: :readings
     
 end
