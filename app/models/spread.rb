@@ -5,6 +5,6 @@ class Spread < ApplicationRecord
     validates :desc, presence: true
     validates :num_of_cards, presence: true
 
-    has_many :posts
+    has_many :readings
 
 end
