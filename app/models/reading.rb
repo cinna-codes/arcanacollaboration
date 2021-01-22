@@ -1,6 +1,6 @@
 class Reading < ApplicationRecord
     belongs_to :user
-    belongs_to :card
+    belongs_to :spread
 
     validates :desc, presence: true
     validates :post_id, presence: true
