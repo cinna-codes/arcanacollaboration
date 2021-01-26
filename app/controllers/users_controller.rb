@@ -4,6 +4,9 @@ class UsersController < ApplicationController
     end
 
     def create
+        # user clicks "I want to authenticate" button
+        # github/auth => github knows someone is trying to authenticate 
+        # 
     end
 
     def show
