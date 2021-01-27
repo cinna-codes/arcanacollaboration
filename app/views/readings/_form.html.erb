@@ -1,0 +1,12 @@
+<%= form_for @reading do |f| %>
+    <%= hidden_field_tag :spread_id, params[:spread] %>
+    <p>
+    <%= f.label "Description" %>
+    <%= f.text_area :desc %>
+    </p>
+    <p>
+    <%= f.label "Card #1" %>
+    <%= f.collection_select :card_id, Card.all, :id, :name %>
+    </p>
+    <%= f.submit %>
+<% end %>

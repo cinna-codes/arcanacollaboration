@@ -1,6 +1,6 @@
 class ReadingsController < ApplicationController
     def index
-
+        @readings = Reading.all
     end
 
     def show
@@ -8,7 +8,7 @@ class ReadingsController < ApplicationController
     end
 
     def new
-
+        @reading = Reading.new
     end
 
     def create
