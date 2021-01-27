@@ -1,7 +1,3 @@
-<ul>
-    <%= @spreads.each do |spread| %>
-        <li>AAAAAAAAAA</li>
-    <% end %>
-</ul>
-
-<p>TEST?</p>
+<% @spreads.each do |spread| %>
+        <p><%= render partial: "spread", locals: {spread: spread} %></p>
+<% end %>
