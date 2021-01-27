@@ -12,7 +12,7 @@ class ReadingsController < ApplicationController
     end
 
     def create
-
+        byebug
     end
 
     def edit
@@ -25,5 +25,11 @@ class ReadingsController < ApplicationController
 
     def destroy
         
+    end
+
+    private
+ 
+    def reading_params
+      params.require(:reading).permit(:desc, card_ids:[])
     end
 end

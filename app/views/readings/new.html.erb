@@ -1,0 +1,20 @@
+<%= form_for @reading do |f| %>
+
+    <p>
+    <%= f.label "Description" %>
+    <p><%= f.text_area :desc %></p>
+    </p>
+    <p>
+    <%= f.label "Card #1" %>
+    <%= f.collection_select :card_ids, Card.all, :id, :name %>
+    </p>
+        <p>
+    <%= f.label "Card #2" %>
+    <%= f.collection_select :card_ids, Card.all, :id, :name %>
+    </p>
+    <p>
+    <%= f.label "Card #3" %>
+    <%= f.collection_select :card_ids, Card.all, :id, :name %>
+    </p>
+    <%= f.submit %>
+<% end %>
