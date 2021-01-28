@@ -13,7 +13,8 @@ class ReadingsController < ApplicationController
     end
 
     def create
-        
+        @reading = Reading.new(reading_params)
+        render :new
     end
 
     def edit
@@ -31,7 +32,7 @@ class ReadingsController < ApplicationController
     private
  
     def reading_params
-      params.require(:reading).permit(:desc, cards_readings_attributes: [:num, :card_id, :upright])
+      params.require(:reading).permit(:spread_id, :desc, cards_readings_attributes: [:num, :card_id, :upright])
     end
 
     def set_reading
