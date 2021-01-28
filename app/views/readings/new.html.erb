@@ -1,5 +1,7 @@
 <%= form_for @reading do |f| %>
-  <p><%= f.label "Description: " %><br> 
+    <%= spread_id_field(@reading) %>
+
+    <p><%= f.label "Description: " %><br> 
     <%= f.text_area :desc %></p>
 
     <%= f.fields_for :cards_readings, @reading.cards_readings.build do |cards_readings_fields| %>
