@@ -13,7 +13,7 @@ class ReadingsController < ApplicationController
     end
 
     def create
-        @reading = Reading.new(reading_params)
+        @reading = Reading.new(reading_params, user_id: current_user.id)
         if @reading.save
             redirect_to reading_path(@reading)
         else
