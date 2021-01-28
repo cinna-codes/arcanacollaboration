@@ -13,10 +13,10 @@ class ReadingsController < ApplicationController
     end
 
     def create
-        # if !logged_in
-        #     redirect_to login_path
-        # end
-        @reading = Reading.new(reading_params)
+        if !logged_in
+            redirect_to login_path
+        end
+        @reading = current_user.readings.build(reading_params)
         if @reading.save
             redirect_to reading_path(@reading)
         else
