@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
 
-  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match '/auth/github/callback', to: 'sessions#create', via: [:get, :post]
 
   get '/signup', to: 'users#new', as: 'signup'
 
