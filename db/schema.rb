@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2021_01_22_083042) do
   create_table "readings", force: :cascade do |t|
     t.string "desc"
     t.integer "user_id", null: false
-    t.integer "card_id", null: false
-    t.index ["card_id"], name: "index_readings_on_card_id"
+    t.integer "spread_id", null: false
+    t.index ["spread_id"], name: "index_readings_on_spread_id"
     t.index ["user_id"], name: "index_readings_on_user_id"
   end
 
@@ -53,6 +53,6 @@ ActiveRecord::Schema.define(version: 2021_01_22_083042) do
 
   add_foreign_key "cards_readings", "cards"
   add_foreign_key "cards_readings", "readings"
-  add_foreign_key "readings", "cards"
+  add_foreign_key "readings", "spreads"
   add_foreign_key "readings", "users"
 end
