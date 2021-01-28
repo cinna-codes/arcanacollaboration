@@ -20,5 +20,6 @@ class CardsReading < ApplicationRecord
     scope :is_reversed, -> { where(upright: false) }
     scope :upright_count, -> { is_upright.count }
     scope :reversed_count, -> { is_reversed.count }
+    scope :is_card, ->(is_card_id) { where("card_id = ?", is_card_id) }
 
 end
