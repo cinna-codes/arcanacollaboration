@@ -1,0 +1,5 @@
+<%= link_to reading.user.username, user_path(user) %> - <%= link_to reading.spread.title, spread_path(reading.spread) %><br><br>
+<% reading.cards.each do |c| %>
+    <%= link_to c.name, card_path(c) %> <br>
+<% end %>
+<%= reading.desc %>
