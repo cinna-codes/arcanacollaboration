@@ -16,4 +16,7 @@ class CardsReading < ApplicationRecord
         message: 'cannot draw the same card twice'
     }
 
+    scope :is_upright, -> { where(upright: true) }
+    scope :is_reversed, -> { where(upright: false) }
+
 end
