@@ -25,7 +25,11 @@ class ReadingsController < ApplicationController
     end
 
     def edit
-
+        if !logged_in
+            redirect_to login_path
+        elsif @reading.user != current_user
+            redirect_to reading_path(@reading)
+        end
     end
 
     def update
