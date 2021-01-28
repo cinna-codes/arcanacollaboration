@@ -1,1 +1,13 @@
 <p>CARD SHOW PAGE</p>
+
+<h2><%= @card.name %> </h2>
+
+<%= @card.keywords %>
+
+<% if @card.suit != "Major" %>
+    <%= "Suit of " + @card.suit %>
+<% else %>
+    <%= "Major Arcana" %>
+<% end %>
+
+<%= @card.desc %>
