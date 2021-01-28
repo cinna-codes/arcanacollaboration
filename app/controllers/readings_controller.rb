@@ -1,5 +1,5 @@
 class ReadingsController < ApplicationController
-    before_action :set_article, only: [:show, :edit, :update, :destroy]
+    before_action :set_reading, only: [:show, :edit, :update, :destroy]
 
     def index
         @readings = Reading.all
@@ -43,6 +43,6 @@ class ReadingsController < ApplicationController
     end
 
     def set_reading
-      @reading = Reading.find_by(id: params[:id])
+      @reading = Reading.find_by_id(params[:id])
     end
 end
