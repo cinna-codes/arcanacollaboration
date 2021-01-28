@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   end
 
   resources :readings
+
+  resources :cards, only: [:index, :show]
 end
