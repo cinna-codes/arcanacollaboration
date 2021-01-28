@@ -14,7 +14,11 @@ class ReadingsController < ApplicationController
 
     def create
         @reading = Reading.new(reading_params)
-        render :new
+        if @reading.save
+            redirect_to reading_path(@reading)
+        else
+            render :new
+        end
     end
 
     def edit
