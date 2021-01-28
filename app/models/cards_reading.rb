@@ -18,5 +18,7 @@ class CardsReading < ApplicationRecord
 
     scope :is_upright, -> { where(upright: true) }
     scope :is_reversed, -> { where(upright: false) }
+    scope :upright_count, -> { is_upright.count }
+    scope :reversed_count, -> { is_reversed.count }
 
 end
