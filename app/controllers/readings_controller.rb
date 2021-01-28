@@ -12,7 +12,7 @@ class ReadingsController < ApplicationController
     end
 
     def create
-        byebug
+        
     end
 
     def edit
@@ -30,6 +30,6 @@ class ReadingsController < ApplicationController
     private
  
     def reading_params
-      params.require(:reading).permit(:desc, card_ids:[], card_readings_attributes: [:num, :card_id])
+      params.require(:reading).permit(:desc, card_ids:[], card_readings_attributes: [:num, :card_id, :upright])
     end
 end

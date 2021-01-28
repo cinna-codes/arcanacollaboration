@@ -1,58 +1,25 @@
-<%= form_for @reading do |f| %>
 
-    <p>
-    <%= f.label "Description" %>
-    <p><%= f.text_area :desc %></p>
-    </p>
-    <p>
-    <%= f.label "Card #1" %>
-    <%= f.collection_select :card_ids, Card.all, :id, :name %>
-    </p>
-        <p>
-    <%= f.label "Card #2" %>
-    <%= f.collection_select :card_ids, Card.all, :id, :name %>
-    </p>
-    <p>
-    <%= f.label "Card #3" %>
-    <%= f.collection_select :card_ids, Card.all, :id, :name %>
-    </p>
-    <p>COLLECTION SELECT: </p>
-    <p><%= f.collection_select :card_ids, Card.all, :id, :name, {}, {:multiple => true} %></p>
-    <p>FIELDS_FOR</p>
-    <p>
-    <%= f.fields_for :cards_readings, @reading.cards_readings.build do |cards_readings_fields| %>
-        <%= f.collection_select :card_ids, Card.all, :id, :name %> <br>
-        <%= cards_readings_fields.text_field :num %>
-        <br><%= radio_button_tag 'upright', 'true', true %> Upright
-        <br><%= radio_button_tag 'upright', 'false' %> Reverse
-        <br><br>
-        <%= f.collection_select :card_ids, Card.all, :id, :name %> <br>
-        <%= cards_readings_fields.text_field :num %>
-        <br><%= radio_button_tag 'upright', 'true', true %> Upright
-        <br><%= radio_button_tag 'upright', 'false' %> Reverse
-        <br><br>
-        <%= f.collection_select :card_ids, Card.all, :id, :name %> <br>
-        <%= cards_readings_fields.text_field :num %>
-        <br><%= radio_button_tag 'upright', 'true', true %> Upright
-        <br><%= radio_button_tag 'upright', 'false' %> Reverse
-    <% end %>
-    </p>
-    <%= f.submit %>
-<% end %>
 <p></p>
 <%= form_for @reading do |f| %>
-  <%= f.label "Desc" %>
-  <%= f.text_field :desc %>
-  <%= f.collection_select :card_ids, Card.all, :id, :name %>
+  <p><%= f.label "Description: " %>
+  <%= f.text_field :desc %></p>
     <%= f.fields_for :cards_readings, @reading.cards_readings.build do |cards_readings_fields| %>
-        <%= cards_readings_fields.collection_select :card_id, Card.all, :id, :name %>
+        <p><%= cards_readings_fields.collection_select :card_id, Card.all, :id, :name %></p>
         <%= cards_readings_fields.text_field :num %>
+
+        <br>Upright: <%= radio_button(cards_readings_fields, upright, true) %>
+        <br>Reversed: <%= radio_button(cards_readings_fields, upright, false) %>
     <% end %>
     <p></p>
-    <p>    
+        
     <%= f.fields_for :cards_readings, @reading.cards_readings.build do |cards_readings_fields| %>
-        <%= cards_readings_fields.collection_select :card_id, Card.all, :id, :name %>
+        <p><%= cards_readings_fields.collection_select :card_id, Card.all, :id, :name %></p>
         <%= cards_readings_fields.text_field :num %>
-    <% end %></p>
+        <br>Upright: <%= radio_button(cards_readings_fields, upright, true) %>
+        <br>Reversed: <%= radio_button(cards_readings_fields, upright, false) %>
+    <% end %>
+    <br>TEST: 
+    
+    
   <%= f.submit %>
 <% end %>
