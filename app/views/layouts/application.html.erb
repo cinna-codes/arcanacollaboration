@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <p><% if session[:user_id] %>
+      <a class="navbar-brand" href="<%= user_url(User.find(session[:user_id])) %>"/>Profile</a>
+      
+      <%= link_to "Log Out", logout_path, method: :post %>
+    <% else %>
+      <a class="navbar-brand" href="<%= signup_url %>"/>Sign Up</a>
+      <a class="navbar-brand" href="<%= login_url %>"/>Log In</a>
+    <% end %></p>
+    <p></p>
     <%= yield %>
   </body>
 </html>
