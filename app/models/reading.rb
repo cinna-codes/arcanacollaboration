@@ -7,4 +7,6 @@ class Reading < ApplicationRecord
     validates :desc, presence: true
     validates :user_id, presence: true
     validates :spread_id, presence: true
+
+    accepts_nested_attributes_for :cards_readings
 end
