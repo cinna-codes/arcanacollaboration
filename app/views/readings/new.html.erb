@@ -16,5 +16,15 @@
     <%= f.label "Card #3" %>
     <%= f.collection_select :card_ids, Card.all, :id, :name %>
     </p>
+    <p>COLLECTION SELECT: </p>
+    <p><%= f.collection_select :card_ids, Card.all, :id, :name, {}, {:multiple => true} %></p>
+    <p>FIELDS_FOR</p>
+    <p>
+    <%= f.fields_for :cards_readings, @reading.cards_readings.build do |cards_readings_fields| %>
+        <%= cards_readings_fields.text_field :num %>
+        <br><%= radio_button_tag 'upright', 'true', true %> Upright
+        <br><%= radio_button_tag 'upright', 'false' %> Reverse
+    <% end %>
+    </p>
     <%= f.submit %>
 <% end %>
