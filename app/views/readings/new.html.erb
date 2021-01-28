@@ -44,15 +44,15 @@
   <%= f.label "Desc" %>
   <%= f.text_field :desc %>
   <%= f.collection_select :card_ids, Card.all, :id, :name %>
-    <%= f.fields_for :cards_readings, @reading.cards_readings.build do |categories_fields| %>
-        <%= f.collection_select :card_ids, Card.all, :id, :name %>
-        <%= categories_fields.text_field :num %>
+    <%= f.fields_for :cards_readings, @reading.cards_readings.build do |cards_readings_fields| %>
+        <%= cards_readings_fields.collection_select :card_id, Card.all, :id, :name %>
+        <%= cards_readings_fields.text_field :num %>
     <% end %>
     <p></p>
     <p>    
-    <%= f.fields_for :cards_readings, @reading.cards_readings.build do |categories_fields| %>
-        <%= f.collection_select :card_ids, Card.all, :id, :name %>
-        <%= categories_fields.text_field :num %>
+    <%= f.fields_for :cards_readings, @reading.cards_readings.build do |cards_readings_fields| %>
+        <%= cards_readings_fields.collection_select :card_id, Card.all, :id, :name %>
+        <%= cards_readings_fields.text_field :num %>
     <% end %></p>
   <%= f.submit %>
 <% end %>
