@@ -30,6 +30,6 @@ class ReadingsController < ApplicationController
     private
  
     def reading_params
-      params.require(:reading).permit(:desc, card_ids:[], card_readings_attributes: [:num, :card_id, :upright])
+      params.require(:reading).permit(:desc, cards_readings_attributes: [:num, :card_id, :upright])
     end
 end
