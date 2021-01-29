@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:user][:email])
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id
-            flash[:message] = "Welcome back #{user.name}!"
-            redirect_to user_groups_path(user)
+            # flash[:message] = "Welcome back #{user.username}!"
+            redirect_to user_path(user)
         else
-            flash[:message] = "There was a problem logging you in, please try again..."
+            # flash[:message] = "An error occurred. Please try to login again."
             redirect_to "/login"
         end
     end
