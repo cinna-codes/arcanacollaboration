@@ -13,7 +13,6 @@ class ReadingsController < ApplicationController
     end
 
     def create
-        byebug
         if !logged_in
             redirect_to login_path
         end
@@ -34,12 +33,18 @@ class ReadingsController < ApplicationController
     end
 
     def update
-        @reading.update(reading_params)
+        if @reading.valid?
+            @reading.cards_readings.each do |cr|
+                cr.destroy
+            end
+        
+            @reading.update(reading_params)
     
-        if @reading.save
-          redirect_to reading_path(@reading)
-        else
-          render :edit
+            if @reading.save
+                redirect_to reading_path(@reading)
+            else
+                render :edit
+            end
         end
     end
 
