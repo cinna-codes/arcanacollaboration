@@ -1,1 +1,9 @@
 <%= render partial: "spread", locals: {spread: @spread} %>
+
+<p>
+    <%= link_to "Readings that use this spread", spread_readings_path(@spread) %>
+</p>
+
+<p>
+    <%= link_to "Create new reading with this spread", new_spread_reading_path(@spread) %>
+</p>
