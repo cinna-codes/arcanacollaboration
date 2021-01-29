@@ -1,4 +1,14 @@
 <h1>TEST!!!!!!!</h1>
 <h1> Hi </h1>
 
+<i>Every field must be filled out.</i>
+<%= form_for :user, url: '/login' do |f| %>
+
+    <p>Username: <%= f.text_field :username %></p>
+    <p>Email: <%= f.text_field :email %></p>
+    <p>Password: <%= f.password_field :password %></p>
+    <p>Password Confirmation: <%= f.password_field :password_confirmation %></p>
+    <p><%= f.submit "Submit" %></p>
+<% end %>
+
 <%= button_to "Log In With GITHUB", "/auth/github", method: :post, :class => 'btn-style-spc' %>

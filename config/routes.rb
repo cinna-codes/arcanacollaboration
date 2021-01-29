@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'static#home'
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy', as: 'logout'
+  delete '/logout', to: 'sessions#destroy'
 
   match '/auth/github/callback', to: 'sessions#github', via: [:get, :post]
 
