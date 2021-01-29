@@ -1,5 +1,5 @@
 <%= render partial: "display", locals: {reading: @reading} %></p>
 
 <% if @reading.user == current_user %>
-    <%= link_to "Edit", edit_reading_path(@reading) %>
+    <%= button_to "Edit", edit_reading_path(@reading), method: :get %>
 <% end %>
