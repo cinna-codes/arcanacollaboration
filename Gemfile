@@ -25,6 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'dotenv-rails'
+gem 'omniauth-rails_csrf_protection'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

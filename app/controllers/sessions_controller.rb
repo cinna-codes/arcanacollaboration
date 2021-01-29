@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
     end
 
     def create
+        
+    end
+
+    def github
         byebug
         auth = request.env["omniauth.auth"]   
   
