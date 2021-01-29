@@ -2,8 +2,8 @@ class User < ApplicationRecord
     has_secure_password
     validates :username, presence: true
     validates :username, uniqueness: true
-    validates :email, presence: true, , unless: -> { from_omniauth? }
-    validates :email, uniqueness: true, , unless: -> { from_omniauth? }
+    validates :email, presence: true, unless: -> { from_omniauth? }
+    validates :email, uniqueness: true, unless: -> { from_omniauth? }
     validates :password, presence: true, unless: -> { from_omniauth? }
     validates :password, length: { minimum: 6 }, unless: -> { from_omniauth? }
 
