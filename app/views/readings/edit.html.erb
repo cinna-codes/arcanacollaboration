@@ -1,5 +1,3 @@
 <%= render 'form' %>
 
-<% if @reading.user == current_user %>
-    <%= link_to "Destroy", reading_path(@reading), method: :delete %>
-<% end %>
+<p><%= button_to "Discard Reading", reading_path(@reading), method: :delete %></p>

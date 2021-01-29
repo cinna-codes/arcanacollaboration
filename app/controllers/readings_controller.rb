@@ -49,7 +49,6 @@ class ReadingsController < ApplicationController
     end
 
     def destroy
-        byebug
         @reading.cards_readings.each do |cr|
             cr.destroy
         end
