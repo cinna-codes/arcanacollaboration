@@ -13,6 +13,7 @@ class ReadingsController < ApplicationController
     end
 
     def create
+        byebug
         if !logged_in
             redirect_to login_path
         end
@@ -51,7 +52,7 @@ class ReadingsController < ApplicationController
     private
  
     def reading_params
-      params.require(:reading).permit(:spread_id, :desc, cards_readings_attributes: [:num, :card_id, :upright])
+      params.require(:reading).permit(:spread_id, :desc, cards_readings_attributes: [:card_id, :upright])
     end
 
     def set_reading

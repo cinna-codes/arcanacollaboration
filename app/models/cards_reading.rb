@@ -11,10 +11,10 @@ class CardsReading < ApplicationRecord
     validates :card_id, presence: true
     # validates :reading_id, presence: true
 
-    validates :card_id, uniqueness: {
-        scope: %i[reading_id],
-        message: 'cannot draw the same card twice'
-    }
+    # validates :card_id, uniqueness: {
+    #     scope: %i[reading_id],
+    #     message: 'cannot draw the same card twice'
+    # }
 
     scope :is_upright, -> { where(upright: true) }
     scope :is_reversed, -> { where(upright: false) }
