@@ -4,7 +4,13 @@ class ReadingsController < ApplicationController
     before_action :validates_is_current_user, only: [:edit, :update, :destroy]
 
     def index
-        @readings = Reading.all
+        if params[:user_id]
+            @readings = Reading.belongs_to_user(params[:user_id])
+        elsif params[:spread_id]
+            @readings = Reading.belongs_to_spread(params[:spread_id])
+        else
+            @readings = Reading.all
+        end
     end
 
     def show
