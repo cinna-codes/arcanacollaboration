@@ -1,5 +1,4 @@
-<h1>TEST!!!!!!!</h1>
-<h1> Hi </h1>
+<h2> Log Into Arcana Collaboration </h2>
 
 <i>Every field must be filled out.</i>
 <%= form_for :user, url: '/login' do |f| %>
@@ -11,4 +10,4 @@
     <p><%= f.submit "Submit" %></p>
 <% end %>
 
-<%= button_to "Log In With GITHUB", "/auth/github", method: :post, :class => 'btn-style-spc' %>
+<p><%= button_to "Log In With GITHUB", "/auth/github", method: :post, :class => 'btn-style-spc' %></p>
