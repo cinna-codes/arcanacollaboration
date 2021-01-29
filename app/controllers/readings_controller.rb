@@ -33,11 +33,19 @@ class ReadingsController < ApplicationController
     end
 
     def update
-
+        @reading.update(reading_params)
+    
+        if @reading.save
+          redirect_to reading_path(@reading)
+        else
+          render :edit
+        end
     end
 
     def destroy
-        
+        @reading.destroy
+        # flash[:notice] = "Reading deleted."
+        redirect_to readings_path
     end
 
     private
