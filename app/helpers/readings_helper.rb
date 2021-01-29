@@ -9,9 +9,9 @@ module ReadingsHelper
         end
     end
 
-    def card_names_and_positions(reading) # CURRENTLY NOT WORKING
-        reading.cards_readings.each do |c| 
-          link_to ((c.card.name) + (c.upright == true ? "Upright" : "Reversed")), card_path(c.card)
-        end
-    end
+    # def card_names_and_positions(reading) # CURRENTLY TESTING
+    #     reading.cards_readings.each do |cr| 
+    #       link_to cr.card_name_and_position, card_path(c.card)
+    #     end
+    # end
 end
