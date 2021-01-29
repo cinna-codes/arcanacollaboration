@@ -10,12 +10,11 @@
 
   <body>
     <p><% if session[:user_id] %>
-      <a class="navbar-brand" href="<%= user_url(User.find(session[:user_id])) %>"/>Profile</a>
-      
+      <%= button_to "Profile", user_url(current_user.id), method: :get %>
       <%= button_to "Log Out", logout_path, method: :delete %>
     <% else %>
-      <a class="navbar-brand" href="<%= signup_url %>"/>Sign Up</a>
-      <a class="navbar-brand" href="<%= login_url %>"/>Log In</a>
+      <%= button_to "Sign Up", signup_url, method: :get %>
+      <%= button_to "Log In", login_url, method: :get %>
     <% end %></p>
     <p></p>
     <%= yield %>
