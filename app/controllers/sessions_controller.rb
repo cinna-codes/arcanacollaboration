@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        
+
     end
 
     def github
@@ -13,9 +13,12 @@ class SessionsController < ApplicationController
   
         user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)     
 
-        session[:user_id] = user.id     
-
-        redirect_to root_url, :notice => "Signed in!"
+        if user && user.save
+            session[:user_id] = user.id
+            redirect_to user_path(user)
+        else
+            redirect_to login_path
+        end
     end
 
     def destroy
