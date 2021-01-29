@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_secure_password
+    has_secure_password(validations: false)
     validates :username, presence: true
     validates :username, uniqueness: true
     validates :email, presence: true, unless: -> { from_omniauth? }
