@@ -1,5 +1,8 @@
-<%= link_to reading.user.username, user_path(reading.user) %> - <%= link_to reading.spread.title, spread_path(reading.spread) %><br>
-<% reading.cards_readings.each do |cr| %>
-    <%= link_to cr.card_name_and_position, card_path(cr.card) %> <br>
-<% end %>
+<p><%= link_to reading.user.username, user_path(reading.user) %> - <%= link_to reading.spread.title, reading_path(reading) %><br>
+    <ul>
+        <% reading.cards_readings.each do |cr| %>
+            <li><%= link_to cr.card_name_and_position, card_path(cr.card) %></li>
+        <% end %>
+    </ul>
 <%= link_to reading.desc, reading_path(reading) %>
+</p><br>
