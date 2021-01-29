@@ -74,7 +74,7 @@ class ReadingsController < ApplicationController
     end
 
     def validates_is_current_user
-        if @reading.id != current_user.id
+        if @reading.user != current_user
             redirect_to reading_path(@reading)
         end
     end
