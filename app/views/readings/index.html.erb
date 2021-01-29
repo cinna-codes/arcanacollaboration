@@ -3,3 +3,7 @@
 <% @readings.each do |reading| %>
     <%= render partial: "display", locals: {reading: reading} %></p>
 <% end %>
+
+<p>
+    <%= link_to "Create new reading", new_reading_path %>
+</p>
