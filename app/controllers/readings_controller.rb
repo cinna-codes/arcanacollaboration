@@ -49,6 +49,9 @@ class ReadingsController < ApplicationController
     end
 
     def destroy
+        @reading.cards_readings.each do |cr|
+            cr.destroy
+        end
         @reading.destroy
         # flash[:notice] = "Reading deleted."
         redirect_to readings_path
