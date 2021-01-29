@@ -9,6 +9,16 @@ module ReadingsHelper
         end
     end
 
+    def index_title
+      if params[:user_id]
+        "#{User.find_by_id(params[:user_id]).username}'s"
+      elsif params[:spread_id]
+        "#{Spread.find_by_id(params[:spread_id]).title}"
+      else
+        "All"
+      end
+    end
+
     # def card_names_and_positions(reading) # CURRENTLY TESTING
     #     reading.cards_readings.each do |cr| 
     #       link_to cr.card_name_and_position, card_path(c.card)

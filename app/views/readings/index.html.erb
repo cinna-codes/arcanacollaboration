@@ -1,3 +1,5 @@
+<h2><%= index_title %> Readings</h2>
+
 <% @readings.each do |reading| %>
     <%= render partial: "display", locals: {reading: reading} %></p>
 <% end %>
