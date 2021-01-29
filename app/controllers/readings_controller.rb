@@ -1,7 +1,7 @@
 class ReadingsController < ApplicationController
     before_action :set_reading, only: [:show, :edit, :update, :destroy]
     before_action :is_logged_in, only: [:new, :create]
-    before_action :validates_is_current_user, only: [:edit, :destroy]
+    before_action :validates_is_current_user, only: [:edit, :update, :destroy]
 
     def index
         @readings = Reading.all
