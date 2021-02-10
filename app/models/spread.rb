@@ -8,4 +8,6 @@ class Spread < ApplicationRecord
     has_many :readings
     has_many :users, through: :spreads
 
+    scope :alphabetize, -> { order(:title) }
+
 end

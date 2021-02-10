@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   resources :readings
 
   resources :cards, only: [:index, :show]
+
+  get '/index', to: 'static#index'
 end

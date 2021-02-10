@@ -1,6 +1,6 @@
 class SpreadsController < ApplicationController
     def index
-        @spreads = Spread.all
+        @spreads = Spread.alphabetize
     end
 
     def show
